@@ -41,6 +41,11 @@ body {
     margin-top: 0;
     margin-bottom: 4rem;
   }
+    @media screen and (max-width: 599px) {
+      .header__tagline {
+        margin-bottom: 2rem;
+      }
+    }
 
 .photo {
   padding: 0.75rem;
@@ -55,6 +60,14 @@ body {
     .photo {
       -webkit-animation: fadeUp 1.5s ease-in-out backwards;
               animation: fadeUp 1.5s ease-in-out backwards;
+    }
+  }
+  @media screen and (max-width: 599px) {
+    .photo {
+      width: 100%;
+      display: block;
+      position: static;
+      pointer-events: none;
     }
   }
   .photo:hover {
