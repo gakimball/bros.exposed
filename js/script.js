@@ -1,17 +1,19 @@
 (function() {
 
-var photos = document.querySelectorAll('.photo');
-var text   = document.querySelector('.bros-in');
+const photos = document.querySelectorAll('.photo');
+const text = document.querySelector('.bros-in');
+
 text.style.opacity = 0;
 
-for (var i = 0; i < photos.length; i++) {
-  photos[i].addEventListener('mouseenter', function() {
+photos.forEach(photo => {
+  photo.addEventListener('mouseenter', ({ target }) => {
     text.style.opacity = 1;
-    text.innerHTML = "Bros in <span>"+this.getAttribute('data-year')+"</span>";
+    text.innerHTML = `Bros in <span>${target.getAttribute('data-year')}</span>`;
   });
-  photos[i].addEventListener('mouseleave', function() {
+
+  photo.addEventListener('mouseleave', () => {
     text.style.opacity = 0;
-  })
-}
+  });
+});
 
 })();
